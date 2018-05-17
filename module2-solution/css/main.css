@@ -11,7 +11,7 @@
   }
 
 .mybox {
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 0px;
   margin: 10px;
   background-color: gray;
@@ -22,15 +22,16 @@
 }
 
 p {
+  margin-top: 30px;
   padding: 5px;
 }
 
 .inner-box {
-  border: 2px solid black;
+  border: 1px solid black;
   position: relative;
   width: 82px;
-  top: -2px;
-  right: -2px;
+  top: -1px;
+  right: -1px;
   float: right;
   text-align: center;
   padding: 5px;

@@ -2,6 +2,7 @@
 /********** Base styles **********/
 * {
     box-sizing: border-box;
+    font-family: Tahoma, Geneva, sans-serif;
   }
 
   /* Simple Responsive Framework. */
@@ -9,11 +10,45 @@
     width: 100%;
   }
 
-p {
+.mybox {
   border: 2px solid black;
-  padding: 10px;
+  padding: 0px;
   margin: 10px;
   background-color: gray;
+}
+
+ h1 {
+   text-align: center;
+}
+
+p {
+  padding: 5px;
+}
+
+.inner-box {
+  border: 2px solid black;
+  position: relative;
+  width: 82px;
+  top: -2px;
+  right: -2px;
+  float: right;
+  text-align: center;
+  padding: 5px;
+}
+
+.box {
+}
+
+.chicken {
+  background: red;
+}
+
+.beef {
+  background: green;
+}
+
+.sushi {
+  background: blue;
 }
 
 /********** Mobile only **********/

@@ -73,9 +73,54 @@ body {
   font-size: 1.8em;
 }
 
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+
+#heading {
+  color: black;
+  text-align: center;
+}
+
+.experiance {
+  float: left;
+  color: black;
+  text-align: right
+}
+
+.job {
+  margin-left: 15px;
+  color: black;
+  text-align: left;
+}
+
+#footer {
+  color: black;
+  clear: left;
+}
+
+#cv {
+  width: 910px;
+  margin-right: auto; 
+  margin-left: auto; 
+}
+/* END HEADER */
+
+.panel {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
 
+  #cv {
+    width: 1170px;
+  }
+
+  #experiance {
+    width: 1170px;
+  }  
 }
 
 /********** Medium devices only **********/
@@ -85,13 +130,19 @@ body {
     background: url('../images/RossBioRound-100px.png') no-repeat;
     width: 100px;
     height: 100px;
-    margin: 5px 5px 5px 0;
+    margin: 10px 5px 5px 0;
   }
   /* End Header */
+  #experiance {
+    width: 970px;
+  } 
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
+  #experiance {
+    width: 768px;
+  } 
 
 }
 
@@ -102,16 +153,13 @@ body {
     padding-top: 10px;
     height: 80px;
   }
-  .navbar-brand h1 { /* Restaurant name */
+  .navbar-brand h1 { /* Person Name */
     padding-top: 10px;
     font-size: 5vw; /* 1vw = 1% of viewport width */
   }
-  .navbar-brand p { /* Kosher cert */
+  .navbar-brand p { /* Strap Line */
     font-size: .6em;
     margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
   }
 
   #collapsable-nav a { /* Collapsed nav menu text */

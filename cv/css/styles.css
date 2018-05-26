@@ -8,11 +8,15 @@ li {
   vertical-align: middle;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   font-size: 16px;
   color: #fff;
   background-color: #E1E9EE;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /** HEADER **/
@@ -34,7 +38,6 @@ body {
 }
 
 .navbar-brand h1 { /* My Name */
-  font-family: 'Poppins', sans-serif;;
   color: #FFFFFF;
   font-size: 1.5em;
   text-transform: uppercase;
@@ -77,7 +80,10 @@ body {
   clear: both;
   margin-top: -30px;
 }
-
+/* END HEADER */
+.container {
+  font-family: Arial,sans-serif;
+}
 #heading {
   color: black;
   text-align: center;
@@ -89,10 +95,25 @@ body {
   text-align: right
 }
 
+.date {
+  font-weight:normal;
+
+}
+
 .job {
   margin-left: 15px;
   color: black;
   text-align: left;
+}
+
+.company {
+  color: #0073B1;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.location {
+  color: #66696a;
+  font-size: 0.6em;
 }
 
 #footer {
@@ -105,7 +126,15 @@ body {
   margin-right: auto; 
   margin-left: auto; 
 }
-/* END HEADER */
+
+.page-header {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.panel-title {
+  color: black;
+  font-weight: bold;
+}
 
 .panel {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -117,10 +146,6 @@ body {
   #cv {
     width: 1170px;
   }
-
-  #experiance {
-    width: 1170px;
-  }  
 }
 
 /********** Medium devices only **********/
@@ -133,14 +158,14 @@ body {
     margin: 10px 5px 5px 0;
   }
   /* End Header */
-  #experiance {
-    width: 970px;
-  } 
+  .date {
+    font-size: 0.7em;
+  }
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  #experiance {
+  #cv {
     width: 768px;
   } 
 
@@ -148,6 +173,10 @@ body {
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  #cv {
+    width: auto;
+  } 
+
   /* Header */
   .navbar-brand {
     padding-top: 10px;
@@ -168,22 +197,6 @@ body {
   #collapsable-nav a span { /* Collapsed nav menu glyph */
     font-size: 1em;
     margin-right: 5px;
-  }
-
-  #call-btn > a {
-    font-size: 1.5em;
-    display: block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
-  }
-  #xs-deliver {
-    margin-top: 5px;
-    font-size: .7em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
   }
   /* End Header */
 

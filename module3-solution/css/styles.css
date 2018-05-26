@@ -1,0 +1,22 @@
+.menu-item {
+    background-color: grey;
+    margin-top: 15px;
+}
+
+.menu-item p, h2 {
+padding: 15px 15px 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.menu-item p {
+    padding: 15px 15px 15px;
+}
+
+#chicken {
+    height: 1000px;
+}
+
+.menu-row {
+    margin: 20px 20px 20px;
+}

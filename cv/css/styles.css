@@ -203,6 +203,10 @@ body {
   .keyskills {
     padding: 0px 15px 0px;
   }
+
+  #header-nav {
+    min-height: 110px;
+  }
   
 }
 

@@ -4,12 +4,16 @@ ol, ul {
 }
 li {
   display: inline-block;
-  padding: 20px 0 20px;
   vertical-align: middle;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 16px;
 }
 
 body {
@@ -26,11 +30,17 @@ body {
   border: 0;
 }
 
+.caution {
+  font-size: 80%; 
+  margin: 0px 40px 0px;
+  text-align: left;
+}
+
 #logo-img {
   background: url('../images/RossBioRound-150px.png') no-repeat;
   width: 150px;
   height: 150px;
-  margin: 10px 15px 10px 0;
+  margin: 15px 15px 15px 15px;
 }
 
 .navbar-brand {
@@ -81,9 +91,11 @@ body {
   margin-top: -30px;
 }
 /* END HEADER */
-.container {
-  font-family: Arial,sans-serif;
-}
+
+.row {
+  margin: 0px 10px 0px;
+  }
+      
 #heading {
   color: black;
   text-align: center;
@@ -95,13 +107,36 @@ body {
   text-align: right
 }
 
-.date {
-  font-weight:normal;
+.keyskills {
+  margin: 0px 0px 15px;
+  padding: 0px 0px 0px;
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+}
 
+.keyskills p, h3, ul, li {
+  margin: 0px 0px 0px;
+  padding: 0px 0px 0px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.date {
+  padding: 0px 0px 0px;
+}
+
+.date p {
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px 0px 15px;
+  text-align: left;
+  padding: 5px 15px 5px;
 }
 
 .job {
-  margin-left: 15px;
+  margin: 0px 0px 0px;
   color: black;
   text-align: left;
 }
@@ -122,7 +157,6 @@ body {
 }
 
 #cv {
-  width: 910px;
   margin-right: auto; 
   margin-left: auto; 
 }
@@ -134,18 +168,20 @@ body {
 .panel-title {
   color: black;
   font-weight: bold;
+  padding-left: 0px;
 }
 
 .panel {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.panel-body {
+  color: #66696a;
+  font-size: 0.8em;
+}
 /********** Large devices only **********/
 @media (min-width: 1200px) {
 
-  #cv {
-    width: 1170px;
-  }
 }
 
 /********** Medium devices only **********/
@@ -155,7 +191,6 @@ body {
     background: url('../images/RossBioRound-100px.png') no-repeat;
     width: 100px;
     height: 100px;
-    margin: 10px 5px 5px 0;
   }
   /* End Header */
   .date {
@@ -165,17 +200,14 @@ body {
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  #cv {
-    width: 768px;
-  } 
-
+  .keyskills {
+    padding: 0px 15px 0px;
+  }
+  
 }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-  #cv {
-    width: auto;
-  } 
 
   /* Header */
   .navbar-brand {
@@ -198,6 +230,15 @@ body {
     font-size: 1em;
     margin-right: 5px;
   }
+
+  .navbar-brand .skills  {
+    line-height: 110%;
+  }
+
   /* End Header */
+
+  .keyskills {
+    padding: 0px 15px 0px 15px;
+  }
 
 }

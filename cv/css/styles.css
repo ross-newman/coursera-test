@@ -126,6 +126,13 @@ body {
   padding: 0px 0px 0px;
 }
 
+.company-logo {
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 15px;
+}
+
 .date p {
   color: black;
   font-size: 12px;

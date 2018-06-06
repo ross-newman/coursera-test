@@ -148,6 +148,12 @@ body {
   text-align: left;
 }
 
+.indent-paragraph {
+  margin-left: 2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .company {
   color: #0073B1;
   font-weight: bold;

@@ -13,10 +13,9 @@
         var list = this;
         $scope.commect = "Nothing yet!";
 
-        // $scope.onClick = $scope.getMatchedMenuItems();
+        list.onClick = $scope.getMatchedMenuItems(list.search);
         console.log($scope);
     };
-
 
     function foundItemsDirective() {
         var ddo = {
@@ -27,7 +26,6 @@
             controller: MsgController,
             controllerAs: 'list',
             bindToController: true,
-            // link: ShoppingListDirectiveLink,
             transclude: true
         };
 
@@ -36,8 +34,8 @@
 
     function MenuSearchService() {
         var service = this;
-
         service.getMatchedMenuItems = function (searchTerm) {
+            console.log(searchItem);
             return $http('https://davids-restaurant.herokuapp.com/menu_items.json')
                 .then(function (result) {
                     // process result and only keep items that match

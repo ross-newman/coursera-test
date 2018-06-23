@@ -10,22 +10,21 @@
   <script src="loader/app.js"></script>
 </head>
 
-<body ng-app="NarrowItDownApp">
+<body ng-app="NarrowItDownApplication">
   <div ng-controller="MsgController as list">
     <div class="container">
       <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-      <div class="form-group"> 
+      <div class="form-group">
         <input ng-model="list.search" type="text" placeholder="search term" class="form-control">
       </div>
       <div class="form-group narrow-button">
-        <button  ng-click="onClick()" class="btn btn-primary">Narrow It Down For Me!</button>
+        <button ng-click="onClick()" class="btn btn-primary">Narrow It Down For Me!</button>
       </div>
 
       <!-- found-items should be implemented as a component -->
-      <found-items 
-      found-items="item in list.items" 
-      on-remove="list.onClick()"></found-items>
+      <found-items found-items="item in list.items" on-remove="list.onClick()">
+      </found-items>
     </div>
   </div>
 

@@ -3,7 +3,8 @@
 (function () {
     'use strict';
 
-    angular.module('NarrowItDownApp', [])
+    const newLocal = 'NarrowItDownApplication';
+    angular.module(newLocal, [])
         .controller('MsgController', MsgController)
         .service('MenuSearchService', MenuSearchService)
         .directive('foundItems', foundItemsDirective);
@@ -13,7 +14,7 @@
         var list = this;
         $scope.commect = "Nothing yet!";
 
-        list.onClick = $scope.getMatchedMenuItems(list.search);
+        list.onClick = MenuSearchService.getMatchedMenuItems(list.search);
         console.log($scope);
     };
 

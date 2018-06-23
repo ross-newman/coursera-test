@@ -14,13 +14,19 @@
     NarrowItDownController.$inject = ['$scope', 'MenuSearchService'];
     function NarrowItDownController($scope, MenuSearchService) {
         var list = this;
-        list.found = [];
+        list.found = null;
         // list.comment = "Nothing yet!";
 
         list.onClick = function (item) {
-            MenuSearchService.getMatchedMenuItems(item);
-            list.found = MenuSearchService.foundItems;
-            console.log(list.found);
+            if (item !== undefined && item !== '') {
+                MenuSearchService.getMatchedMenuItems(item);
+                list.found = MenuSearchService.foundItems;
+                console.log(list.found);
+                }
+                else{
+                    list.found = [];
+                }
+
         }
 
         list.onRemove = function (index) {

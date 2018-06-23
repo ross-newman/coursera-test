@@ -1,31 +1,41 @@
+
 // IIFE
 (function () {
-
     'use strict';
 
     angular.module('NarrowItDownApp', [])
-        .controller('NarrowItDownController ', NarrowItDownController)
-        .provider('MenuSearchService', MenuSearchServiceProvider)
+        .controller('MsgController', MsgController)
+        .service('MenuSearchService', MenuSearchService)
         .directive('foundItems', foundItemsDirective);
+
+    MsgController.$inject = ['$scope', 'MenuSearchService'];
+    function MsgController($scope) {
+        var list = this;
+        $scope.commect = "Nothing yet!";
+
+        // $scope.onClick = $scope.getMatchedMenuItems();
+        console.log($scope);
+    };
+
 
     function foundItemsDirective() {
         var ddo = {
-            templateUrl: 'itemsloaderindicator.template.html',
+            templateUrl: 'loader/itemsloaderindicator.template.html',
             scope: {
                 found: '<',
             },
-            controller: ShoppingListDirectiveController,
+            controller: MsgController,
             controllerAs: 'list',
             bindToController: true,
-            link: ShoppingListDirectiveLink,
+            // link: ShoppingListDirectiveLink,
             transclude: true
         };
 
         return ddo;
     }
 
-    function MenuSearchServiceProvider() {
-        var provider = this;
+    function MenuSearchService() {
+        var service = this;
 
         service.getMatchedMenuItems = function (searchTerm) {
             return $http('https://davids-restaurant.herokuapp.com/menu_items.json')
@@ -38,16 +48,6 @@
                     return foundItems;
                 });
         };
-    };
-
-
-    NarrowItDownController.$inject = ['$scope', 'MenuSearchService'];
-    function NarrowItDownController($scope) {
-        var list = this;
-        $scope.commect = "Nothing yet!";
-
-        list.onClick = MenuSearchService.getMatchedMenuItems();
-
     };
 
 })();

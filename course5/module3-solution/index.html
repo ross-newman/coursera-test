@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="NarrowItDownApp">
+<html lang="en">
 
 <head>
   <title>Narrow Down Your Menu Choice</title>
@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="loader/angular.min.js"></script>
+  <script src="loader/app.js"></script>
 </head>
 
-<body>
-  <div class="container" ng-controller="NarrowItDownController as list">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+<body ng-app="NarrowItDownApp">
+  <div ng-controller="MsgController as list">
+    <div class="container">
+      <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control">
-    </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
+      <div class="form-group">
+        <input ng-model="search" type="text" placeholder="search term" class="form-control">
+      </div>
+      <div class="form-group narrow-button">
+        <button  ng-click="onClick()" class="btn btn-primary">Narrow It Down For Me!</button>
+      </div>
 
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="item in list.items" on-remove="list.onClick()"></found-items>
+      <!-- found-items should be implemented as a component -->
+      <found-items found-items="item in list.items" on-remove="list.onClick()"></found-items>
+    </div>
   </div>
 
+
+
 </body>
-<script src="loader/app.js"></script>
+
 </html>

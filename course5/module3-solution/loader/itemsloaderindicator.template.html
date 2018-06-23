@@ -1,1 +1,14 @@
-<div class="loader"></div>
+<div class="row">
+    <h3> Here are the items we found {{ foundDirectiveCtrl.foundItems.length }} :</h3>
+    <ul ng-repeat="item in foundDirectiveCtrl.foundItems">
+        <li>
+             {{ item.short_name }}, {{ item.name }} <br /> {{ item.description }}
+            <button ng-click="foundDirectiveCtrl.onRemove({index: $index});">Remove Item</button>
+        </li>
+    </ul>
+
+    <div class="error" ng-show="foundDirectiveCtrl.foundItems.length === 0">
+        <h3 class="text-danger">Nothing found</h3>
+    </div>
+
+</div>

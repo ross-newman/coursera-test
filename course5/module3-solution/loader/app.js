@@ -5,27 +5,40 @@
 
     const newLocal = 'NarrowItDownApplication';
     angular.module(newLocal, [])
-        .controller('MsgController', MsgController)
+        .controller('NarrowItDownController', NarrowItDownController)
         .service('MenuSearchService', MenuSearchService)
-        .directive('foundItems', foundItemsDirective);
+        .directive('foundItems', foundItemsDirective)
+        .constant('ApiMenuItems', 'https://davids-restaurant.herokuapp.com/menu_items.json');
 
-    MsgController.$inject = ['$scope', 'MenuSearchService'];
-    function MsgController($scope) {
+    // Controller
+    NarrowItDownController.$inject = ['$scope', 'MenuSearchService'];
+    function NarrowItDownController($scope, MenuSearchService) {
         var list = this;
-        $scope.commect = "Nothing yet!";
+        list.found = [];
+        // list.comment = "Nothing yet!";
 
-        list.onClick = MenuSearchService.getMatchedMenuItems(list.search);
-        console.log($scope);
+        list.onClick = function (item) {
+            MenuSearchService.getMatchedMenuItems(item);
+            list.found = MenuSearchService.foundItems;
+            console.log(list.found);
+        }
+
+        list.onRemove = function (index) {
+            list.found.splice(index, 1);
+        }
     };
 
+    // Directive for FoundItems
     function foundItemsDirective() {
         var ddo = {
             templateUrl: 'loader/itemsloaderindicator.template.html',
+            restrict: 'E',
             scope: {
-                found: '<',
+                foundItems: '<',
+                onRemove: '&'
             },
-            controller: MsgController,
-            controllerAs: 'list',
+            controller: FoundItemsDirectiveController,
+            controllerAs: 'foundDirectiveCtrl',
             bindToController: true,
             transclude: true
         };
@@ -33,17 +46,36 @@
         return ddo;
     }
 
-    function MenuSearchService() {
+    //  Directive's controlller
+    function FoundItemsDirectiveController() {
+    }
+
+    // Service
+    MenuSearchService.$inject = ['$http', 'ApiMenuItems'];
+    function MenuSearchService($http, ApiMenuItems) {
         var service = this;
-        service.getMatchedMenuItems = function (searchTerm) {
+		service.foundItems = [];
+        service.getMatchedMenuItems = function (searchItem) {
             console.log(searchItem);
-            return $http('https://davids-restaurant.herokuapp.com/menu_items.json')
+            return $http
+                .get(ApiMenuItems)
                 .then(function (result) {
                     // process result and only keep items that match
                     console.log(result);
                     //var foundItems...
+                    var foundItems = [];
 
                     // return processed items
+                    angular.forEach(result.data.menu_items, function (val, idx) {
+                        if (val.description.toLowerCase().indexOf(searchItem.toLowerCase()) > -1) {
+                            // console.log("Match " + val);
+                            foundItems.push(val);
+                        } else{
+                            // console.log("No Match " + val);
+                        }
+                    });
+                    angular.copy(foundItems, service.foundItems);
+                    // return foundItems;
                     return foundItems;
                 });
         };

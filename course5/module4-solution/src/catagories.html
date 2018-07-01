@@ -1,0 +1,10 @@
+<div>
+    <h2>Catagories</h2>
+    <a ui-sref="home">Home</a> >
+    <a ui-sref="categories">Catagories</a>
+    <ul>
+        <li ng-repeat="item in categories.items">
+            {{ item.id }}/{{ item.short_name }} - <a ui-sref="item_detail({itemId: item.short_name})">{{ item.name }}</a> <br> {{ item.special_instructions }}
+        </li>
+    </ul>
+</div>

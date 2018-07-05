@@ -1,0 +1,12 @@
+<div>
+  <!-- test debug {{ $ctrl.getValid() }} -->
+  <div id="info" ng-if="$ctrl.getValid() == false">
+    Not Signed Up Yet. Sign up Now!
+  </div>
+  <div id="info" ng-if="$ctrl.getValid()">
+    First Name : {{ $ctrl.getFirst() }} <br />
+    Last Name : {{ $ctrl.getLast() }} <br />
+    Email : {{ $ctrl.getEmail() }} <br />
+    Phone : {{ $ctrl.getPhone() }} <br />
+  </div>
+</div>

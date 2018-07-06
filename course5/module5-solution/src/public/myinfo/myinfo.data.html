@@ -1,7 +1,7 @@
 <div>
   <!-- test debug {{ $ctrl.getValid() }} -->
   <div id="info" ng-if="$ctrl.getValid() == false">
-    Not Signed Up Yet. Sign up Now!
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
   </div>
   <div id="info" ng-if="$ctrl.getValid()">
     First Name : {{ $ctrl.getFirst() }} <br />

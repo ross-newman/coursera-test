@@ -1,7 +1,7 @@
 <fieldset>
   <form name='regForm' novalidate>
 
-    <input class="signup" type="text" name="firstname" placeholder="First name" ng-model="$ctrl.user.firstname" required minlength="4" ng-maxlength="10"> {{ $ctrl.user.firstname }}
+    <input class="signup" type="text" name="firstname" placeholder="First name" ng-model="$ctrl.user.firstname" required minlength="4" ng-maxlength="10"> 
     <span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
       First name must be at least 4 characters long
     </span>
@@ -10,7 +10,7 @@
     </span>
     <br>
 
-    <input class="signup" type="text" name="lastname" placeholder="Last name" ng-model="$ctrl.user.lastname" required minlength="4" ng-maxlength="10"> {{ $ctrl.user.lastname }}
+    <input class="signup" type="text" name="lastname" placeholder="Last name" ng-model="$ctrl.user.lastname" required minlength="4" ng-maxlength="10"> 
     <span ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
       Last name must be at least 4 characters long
     </span>
@@ -31,14 +31,17 @@
     </span>
     <br>
 
-    <button ng-disabled="regForm.$invalid" ng-click="$ctrl.submit()">Submit</button>
+    <input class="signup" type="text" name="favdish" placeholder="Favoret Dish" ng-model="$ctrl.user.favdish"> 
+    <br>
 
-    <div style="margin-top: 10px;">
-      Form valid? {{ regForm.$valid }}
-    </div>
+    <button ng-class="{'valid': regForm.$valid == true}" ng-disabled="regForm.$invalid" ng-click="$ctrl.submit()">Submit</button>
+
+    <!-- <div style="margin-top: 10px;">
+      Form valid? {{ regForm.$valid }} {{ $ctrl.user.valid }}
+    </div> -->
   </form>
 </fieldset>
 
-<div id="info" ng-if="reg.completed">
+<div id="info" ng-if="$ctrl.user.valid">
   Thank you for your sign up. Complete.
 </div>

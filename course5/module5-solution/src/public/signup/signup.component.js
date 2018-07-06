@@ -27,6 +27,7 @@ function signUpController(ApiPath, signupInfo) {
   var $ctrl = this;
   $ctrl.basePath = ApiPath;
   $ctrl.user = {};
+  $ctrl.user.valid = false;
   $ctrl.user.firstname = "";
   $ctrl.user.lasttname = "";
   $ctrl.user.phone = "";
@@ -40,6 +41,7 @@ function signUpController(ApiPath, signupInfo) {
     signupInfo.email = $ctrl.email;
     signupInfo.favdish = $ctrl.favdish;
     signupInfo.user.valid = true;
+    $ctrl.user.valid = true;
   };
 }
 

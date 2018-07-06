@@ -1,13 +1,22 @@
 <div>
   <!-- test debug {{ $ctrl.getValid() }} -->
   <div id="info" ng-if="$ctrl.getValid() == false">
-    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    Not Signed Up Yet.
+    <a ui-sref="public.signup">Sign up Now!</a>
   </div>
   <div id="info" ng-if="$ctrl.getValid()">
-    First Name : {{ $ctrl.getFirst() }} <br />
-    Last Name : {{ $ctrl.getLast() }} <br />
-    Email : {{ $ctrl.getEmail() }} <br />
-    Phone : {{ $ctrl.getPhone() }} <br />
-    Phone : {{ $ctrl.getFavItem() }} <br />
+    First Name : {{ $ctrl.getFirst() }}
+    <br /> Last Name : {{ $ctrl.getLast() }}
+    <br /> Email : {{ $ctrl.getEmail() }}
+    <br /> Phone : {{ $ctrl.getPhone() }}
+    <br /> Favoret Dish : {{ $ctrl.getFavItem() }}
+    <br />
+    <div ng-if="$ctrl.fav.valid">
+      <h1>Favoret Dish</h1>
+      Name : {{ $ctrl.fav.name }}
+      <br /> Description : {{ $ctrl.fav.description }}
+      <br />  <img src="/images/menu/{{ $ctrl.fav.category_short_name }}/{{ $ctrl.fav.category_short_name }}.jpg">
+    </div>
+
   </div>
 </div>
